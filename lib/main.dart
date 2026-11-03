@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart';
 const navy = Color(0xFF101F3B);
 const orange = Color(0xFFF28C28);
 
-void main() => runApp(const Routex89App());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'https://kqxkbopijippzrtrmann.supabase.co',
+    publishableKey: 'sb_publishable_VTxsrq7edNlo-Wa1e_rskw_4-4_fVhJ',
+  );
+
+  runApp(const Routex89App());
+}
 
 class Routex89App extends StatelessWidget {
   const Routex89App({super.key});
